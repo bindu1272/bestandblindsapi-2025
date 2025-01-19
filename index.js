@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const port = 4000;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors()); // Allows requests from any origin
 
 // Basic API route
 app.get('/names', (req, res) => {
-    res.send('["John", "Jane", "Doe"]');
+    res.send(["John", "Jane", "Doe"]);
 });
 
 // Example POST route
